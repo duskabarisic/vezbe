@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+	<title>Duska Vezbe</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+	
+	
+</head>
+<body>
+
+
+<textarea id="textarea" rows="7" cols="25" maxlength="55"></textarea>
+<div id="textarea_feedback"></div>
+
+<script >
+$(document).ready(function () {
+	var text_max = 55 ;
+	$('#textarea_feedback').html(text_max + 'characters remaining');
+
+	$('#textarea').on('keyUp',function () {
+		var text_length = $('#textarea').val().length;
+		var text_remaining = text_max  - text_length;
+
+		$('#textarea_feedback').html(text_remaining  + 'caracters remainig');
+
+});
+});
+
+
+</script>
+
+</body>
+</html>
